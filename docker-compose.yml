@@ -1,0 +1,25 @@
+#version: '3.8'
+
+services:
+
+  inertiadb:
+    image: mariadb:latest
+    container_name: inertia-db
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: $DB_PASSWORD
+      MARIADB_DATABASE: $DB_DATABASE
+      MARIADB_USER: $DB_USERNAME
+      MARIADB_PASSWORD: $DB_PASSWORD
+    volumes:
+      - ./dbdata:/var/lib/mysql
+    ports:
+      - $DB_PORT:3306
+
+  adminer:
+    image: adminer
+    container_name: inertia-adminer
+    restart: always
+    ports:
+      - $ADMINER_PORT:8080
+
