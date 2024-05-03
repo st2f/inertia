@@ -23,8 +23,10 @@ docker compose build && docker compose up -d
 adminer : http://localhost:8007
 
 mariadb :
-- mysql -h inertiadb -uinertia_user -P 3307 -pinertia_pwd
+- `mysql -h inertiadb -u inertia_user -P 3307 -p inertia_pwd`
 - laravel will use DB_HOST=0.0.0.0
+
+![image](https://github.com/st2f/inertia/assets/66139812/e125943c-b12e-4a3f-adf8-7a05cc840e45)
 
 ## migrate db data
 
@@ -53,11 +55,15 @@ npm run dev
 # in terminal 2
 php artisan serve
 
-# if ctrl-C does not stop these processes : kill -9 `lsof -t -i:8000,5173`
+# to stop : ctrl-C or ctrl-shift-C or kill -9 `lsof -t -i:8000,5173`
 ```
 
 - laravel http://127.0.0.1:8000 (php8)
 - vite http://127.0.0.1:5173 (node)
+
+![image](https://github.com/st2f/inertia/assets/66139812/29bb3fe8-52c5-4a81-ab70-940edf0a69b6)
+![image](https://github.com/st2f/inertia/assets/66139812/8264486e-48fd-488a-990d-4e4b559448bc)
+
 
 ## run app prod
 ```bash
